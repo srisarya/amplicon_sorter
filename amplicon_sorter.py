@@ -16,6 +16,7 @@ distance:
 """
 from Bio import SeqIO
 import multiprocessing
+multiprocessing.set_start_method("fork", force=True)
 from multiprocessing import Process, Lock, Queue
 from threading import Thread
 import edlib # faster implementation than Levenshtein for seq longer than 200 bp 
